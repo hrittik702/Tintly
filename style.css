@@ -178,6 +178,6 @@ h1:hover::after {
   border-right: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-.box-right {
+/* .box-right {
   border-right: 2px solid rgba(0, 0, 0, 0.3);
-}
+} */
