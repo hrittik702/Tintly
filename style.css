@@ -125,8 +125,59 @@ hr {
   font-weight: 500;
   font-style: normal;
   background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   /* box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37); */
   border-radius: 10px;
   backdrop-filter: blur(16px);
+}
+
+/*  FIXME  - CSS Custom Tooltip for h1 */
+
+h1 {
+  position: relative;
+  /* cursor: pointer; */
+  transition: 0.3s ease all;
+}
+
+h1::after {
+  content: attr(data-title);
+  font-family: sans-serif;
+  position: absolute;
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(1rem);
+  color: rgb(55, 55, 55);
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+  left: 50%;
+  bottom: -30%;
+  transform: translateX(-50%) translateY(50%);
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+h1:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s ease all;
+}
+
+.box {
+  border-top: 2px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+#box-start {
+  border-left: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+#box-end {
+  border-right: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.box-right {
+  border-right: 2px solid rgba(0, 0, 0, 0.3);
 }
